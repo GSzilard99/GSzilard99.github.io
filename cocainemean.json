@@ -37,12 +37,12 @@
       }
     },
     "title": {
-      "text": "Cocaine Wholesale Price átlagára 1990-2020",
+      "text": "A kokain nagykereskedelmi átlagárának alakulása",
       "subtitle": "Forrás: https://data.world/makeovermonday/2022w46",
       "subtitleFont": "Arial",
       "subtitleFontWeight": "lighter"
     },
-    "width": 710,
+    "width": 810,
     "height": 500,
     "config": {"view": {"stroke": "transparent"}}
   }
