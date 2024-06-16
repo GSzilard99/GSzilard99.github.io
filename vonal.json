@@ -1,0 +1,109 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/GSzilard99/GSzilard99.github.io-/main/Cocaine%20and%20Heroin.csv",
+    "format": {"type": "csv"}
+  },
+  "params": [
+    {
+      "name": "selectedMetric",
+      "value": "Wholesale Price",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Wholesale Price",
+          "Retail Price"
+        ],
+        "name": "Price type: "
+      }
+    },
+    {
+      "name": "selectedCountry",
+      "value": "Austria",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Austria", "Belgium", "Denmark", "Finland", "France", "Germany", "Greece", "Ireland", "Italy", "Luxembourg", "Netherlands", "Norway", "Portugal", "Spain", "Sweden", "Switzerland", "United Kingdom"
+        ],
+        "name": "Country: "
+      }
+    },
+    {
+      "name": "selectedDrug",
+      "value": "Cocaine",
+      "bind": {
+        "input": "select",
+        "options": ["Cocaine", "Heroin"],
+        "name": "Drug type: "
+      }
+    },
+    {
+      "name": "xTitle",
+      "value": "Wholesale Price",
+      "expr": "selectedMetric"
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum[selectedMetric] != null && datum.Drug == selectedDrug"
+    },
+    {
+      "calculate": "year(datum.Year)",
+      "as": "YearNumber"
+    },
+    {
+      "calculate": "datum[selectedMetric]",
+      "as": "metricValue"
+    }
+  ],
+  "mark": {"type": "line", "strokeWidth": 2},
+  "encoding": {
+    "x": {
+      "field": "YearNumber",
+      "type": "ordinal",
+      "title": "Év"
+    },
+    "y": {
+      "field": "metricValue",
+      "type": "quantitative",
+      "title": {"signal": "xTitle"}
+    },
+    "color": {
+      "field": "Country",
+      "type": "nominal",
+      "title": "Ország",
+      "scale": {
+        "domain": [
+          "Austria", "Belgium", "Denmark", "Finland", "France", "Germany", "Greece", "Ireland", "Italy", "Luxembourg", "Netherlands", "Norway", "Portugal", "Spain", "Sweden", "Switzerland", "United Kingdom"
+        ],
+        "range": ["#000000"]
+      },
+      "condition": {
+        "test": "datum.Country === selectedCountry",
+        "value": "#FFFF00"
+      }
+    },
+    "tooltip": [
+      {"field": "YearNumber", "title": "Év"},
+      {"field": "metricValue", "title": "Ár"},
+      {"field": "Country", "title": "Ország"},
+      {"field": "Drug", "title": "Drog típus"}
+    ]
+  },
+  "selection": {
+    "country": {
+      "type": "single",
+      "fields": ["selectedCountry"],
+      "init": {"selectedCountry": "Austria"}
+    }
+  },
+  "title": {
+    "text": "Egyes kábítószerek ára a kiválasztott időszakban",
+    "subtitle": "https://data.world/makeovermonday/2022w46",
+    "subtitleFont": "Arial",
+    "subtitleFontWeight": "lighter"
+  },
+  "width": 710,
+  "height": 500,
+  "config": {"view": {"stroke": "transparent"}}
+}
