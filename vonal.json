@@ -14,7 +14,7 @@
           "Wholesale Price",
           "Retail Price"
         ],
-        "name": "Price type: "
+        "name": "Kereskedelem: "
       }
     },
     {
@@ -25,7 +25,7 @@
         "options": [
           "Austria", "Belgium", "Denmark", "Finland", "France", "Germany", "Greece", "Ireland", "Italy", "Luxembourg", "Netherlands", "Norway", "Portugal", "Spain", "Sweden", "Switzerland", "United Kingdom"
         ],
-        "name": "Country: "
+        "name": "Ország: "
       }
     },
     {
@@ -34,7 +34,7 @@
       "bind": {
         "input": "select",
         "options": ["Cocaine", "Heroin"],
-        "name": "Drug type: "
+        "name": "Kábítőszer:  "
       }
     },
     {
@@ -80,7 +80,7 @@
       },
       "condition": {
         "test": "datum.Country === selectedCountry",
-        "value": "#FFFF00"
+        "value": "#FD0303"
       }
     },
     "tooltip": [
@@ -98,8 +98,8 @@
     }
   },
   "title": {
-    "text": "Egyes kábítószerek ára a kiválasztott időszakban",
-    "subtitle": "https://data.world/makeovermonday/2022w46",
+    "text": "Kábítőszer árának az alakulása, minden ország viszonylatában",
+    "subtitle": "forrás: https://data.world/makeovermonday/2022w46",
     "subtitleFont": "Arial",
     "subtitleFontWeight": "lighter"
   },
