@@ -1,0 +1,49 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/GSzilard99/GSzilard99.github.io-/main/Coke%20and%20Heroin.csv",
+      "format": {"type": "csv"}
+    },
+    "transform": [
+      {
+        "filter": "datum['Wholesale Price'] != null"
+      },
+      {
+        "calculate": "year(datum.Year)",
+        "as": "Year"
+      },
+      {
+        "filter": "datum.Year >= 1990 && datum.Year <= 2020 && datum.Drug === 'Cocaine'"
+      },
+      {
+        "aggregate": [
+          {"op": "mean", "field": "Wholesale Price", "as": "meanWholesalePrice"}
+        ],
+        "groupby": ["Year"]
+      }
+    ],
+    "mark": {"type": "line"},
+    "encoding": {
+      "x": {
+        "field": "Year",
+        "type": "ordinal",
+        "title": "Év"
+      },
+      "y": {
+        "field": "meanWholesalePrice",
+        "type": "quantitative",
+        "title": "Átlagár",
+        "scale": {"zero": false}
+      }
+    },
+    "title": {
+      "text": "Cocaine Wholesale Price átlagára 1990-2020",
+      "subtitle": "Forrás: https://data.world/makeovermonday/2022w46",
+      "subtitleFont": "Arial",
+      "subtitleFontWeight": "lighter"
+    },
+    "width": 710,
+    "height": 500,
+    "config": {"view": {"stroke": "transparent"}}
+  }
+  
