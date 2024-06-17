@@ -3,81 +3,100 @@
 
 /* These are comments in CSS. Comments don't do anything except explain your working to make code easier to understand. */
 
-
 body { /* We can style any HTML element by using its name - here we're styling the body */
-    /* We want text that uses a clean sans-serif font, is usually 16px big and close to black */
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    color: #03021a;
-    line-height: 1.6;
-    /* we want a white page, that's centered and not too wide */
-    background-color: #8AAAE5;
-    margin:0 auto;
-    max-width: 1000px;
-    padding-top: 60px;
-  }
-  
-  
-  /* Headings */
-  h1, h2, h3, h4, h5, h6 {
-    color: #333;
-    margin-top: 24px;
-    margin-bottom: 16px;
-    font-weight: 600;
-  }
-  
-  /* We want the headings to be a little bigger than the paragraph text */
-  .big { 
-    color: #2a078b;
-    animation-duration: 3s;
+  /* We want text that uses a clean sans-serif font, is usually 16px big and close to black */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  color: #31473A;
+  line-height: 1.6;
+  /* we want a white page, that's centered and not too wide */
+  background-color: #EDF4F2;
+  margin: 0 auto; /* Center the content horizontally */
+  max-width: 1200px; /* Limit the maximum width of the content */
+  padding: 0 20px; /* Add padding on both sides */
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #31473A;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* We want the headings to be a little bigger than the paragraph text */
+.big { 
+  color: #31473A;
+  animation-duration: 3s;
   animation-name: slidein;
 }
 
-@keyframes slidein {
-  from {
-    translate: 150vw 0;
-    scale: 200% 1;
-  }
+h2 {
+  font-size: 1.75em;
+}
 
-  to {
-    translate: 0 0;
-    scale: 100% 1;
-  }/* This is the class we created in the HTML file, you can use it to style any element */
-    
-  }
-  
-  h2 {
-    
-    font-size: 1.75em;
-  }
-  
-  .small {
-    font-size: 1.25em;
-  }
-  
-  /* Paragraph */
-  p {
-    margin-bottom: 1em;
-    font-weight: 300;
-  }
-  
-  section {
-    margin-bottom: 2.5em;  /* We want a little more space between sections */
-  }
-  
-  /* Links */
-  /* We want the links to be a little more visible  and a different color */
-  a {
-    color: #065f46;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-    
-  /* Images */
-  img {
-    max-width: 100%;
-    height: auto;
-  }
+.small {
+  font-size: 1.25em;
+  color: #31473A;
+}
+
+/* Paragraph */
+p {
+  margin-bottom: 1em;
+  font-weight: 300;
+  color: #31473A;
+  text-align: center;
+}
+
+section {
+  margin-bottom: 2.5em;  /* We want a little more space between sections */
+  color: #31473A;
+  text-align: center;
+}
+
+/* Links */
+/* We want the links to be a little more visible and a different color */
+a {
+  color: #31473A;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.chapter {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #31473A;
+  border-radius: 5px;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* New CSS for scroll animation */
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
