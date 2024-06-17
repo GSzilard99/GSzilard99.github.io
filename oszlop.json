@@ -54,7 +54,7 @@
       "as": "metricValue"
     }
   ],
-  "mark": {"type": "bar"},
+  "mark": {"type": "bar", "color": "#31473A"},
   "encoding": {
     "y": {
       "field": "Country",
@@ -81,5 +81,8 @@
   },
   "width": 750,
   "height": 500,
-  "config": {"view": {"stroke": "transparent"}}
+  "config": {
+    "view": {"stroke": "transparent"}
+  },
+  "background": "#EDF4F2"
 }
