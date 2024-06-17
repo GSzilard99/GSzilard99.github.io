@@ -56,7 +56,7 @@
       "as": "metricValue"
     }
   ],
-  "mark": {"type": "line", "strokeWidth": 2},
+  "mark": {"type": "line", "strokeWidth": 2,  "color": "#31473A"},
   "encoding": {
     "x": {
       "field": "YearNumber",
@@ -105,5 +105,8 @@
   },
   "width": 710,
   "height": 500,
-  "config": {"view": {"stroke": "transparent"}}
+  "config": {
+    "view": {"stroke": "transparent"}
+  },
+  "background": "#EDF4F2"
 }
