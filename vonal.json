@@ -34,7 +34,7 @@
       "bind": {
         "input": "select",
         "options": ["Cocaine", "Heroin"],
-        "name": "Kábítőszer:  "
+        "name": "Kábítószer:  "
       }
     },
     {
